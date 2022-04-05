@@ -1,1 +1,24 @@
-<paste log output from Kubernetes-mediated prediction, here>
+Output from ./run_kubernetes.sh:
+NAME                READY   STATUS    RESTARTS   AGE
+sklearn-predictor   1/1     Running   0          7s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+
+
+
+
+------------------
+Output from kubectl logs sklearn-predictor:
+
+[2022-04-05 05:35:35,529] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-04-05 05:35:35,547] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-04-05 05:35:35,554] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2022-04-05 05:35:35,557] INFO in app: Prediction: 
+[20.35373177134412]
+127.0.0.1 - - [05/Apr/2022 05:35:35] "POST /predict HTTP/1.1" 200 -

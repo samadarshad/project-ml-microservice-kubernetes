@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![CircleCI](https://circleci.com/gh/samadarshad/project-ml-microservice-kubernetes/tree/dev.svg?style=svg)](https://circleci.com/gh/samadarshad/project-ml-microservice-kubernetes/tree/dev)
 
 ## Project Overview
 
